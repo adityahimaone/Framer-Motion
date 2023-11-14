@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 type Props = {};
 
-const BasicsOfMotion = (props: Props) => {
+const Gestures = (props: Props) => {
   const [isVisible, setIsVisible] = useState(true);
   return (
     <div className="grid h-screen gap-3 place-content-center">
@@ -64,4 +64,4 @@ const BasicsOfMotion = (props: Props) => {
   );
 };
 
-export default BasicsOfMotion;
+export default Gestures;
