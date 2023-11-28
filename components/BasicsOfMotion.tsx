@@ -10,7 +10,7 @@ const Gestures = (props: Props) => {
   return (
     <div className="grid h-screen gap-3 place-content-center">
       {/* AnimatePresence is for animating components that are removed from DOM  type mode are "sync", "wait", "popLayout" */}
-      <AnimatePresence mode="popLayout">
+      <AnimatePresence mode="sync">
         {isVisible && (
           <motion.div
             // example of properties that can be animated: https://www.framer.com/api/motion/animation/#animate
