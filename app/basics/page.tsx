@@ -1,7 +1,14 @@
+// source: https://youtu.be/31y7-k3ZG0g?si=1QUfIEyLGlxYl7Q8
 "use client";
 
-import React from "react";
-import { motion, useScroll } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import {
+  motion,
+  useAnimation,
+  useInView,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 type Props = {};
 
@@ -48,6 +55,45 @@ const svgIconVariants = {
 
 const Page = (props: Props) => {
   const { scrollYProgress: completionProgress } = useScroll();
+
+  const containerSectionRef = useRef(null);
+
+  const isInView = useInView(containerSectionRef, {
+    // once =  true -> means it will only trigger once
+    once: true,
+  });
+
+  const mainControls = useAnimation();
+
+  const { scrollYProgress } = useScroll({
+    target: containerSectionRef,
+    // offset means when to trigger the animation
+    // start end means when the top of the section is at the top of the viewport
+    // end end means when the bottom of the section is at the top of the viewport
+    offset: ["start end", "end end"],
+  });
+
+  // means when scrollYProgress is 0, paragraphOneValue is -100
+  // means when scrollYProgress is 1, paragraphOneValue is 0
+  const paragraphOneValue = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["-100", "0%"]
+  );
+
+  // means when scrollYProgress is 0, paragraphTwoValue is 100
+  // means when scrollYProgress is 1, paragraphTwoValue is 0
+  const paragraphTwoValue = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["100", "0%"]
+  );
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView]);
   return (
     <div className="flex flex-col gap-10 overflow-x-hidden">
       <motion.section
@@ -195,6 +241,43 @@ const Page = (props: Props) => {
           </motion.svg>
         </motion.div>
       </motion.section>
+      <section className="flex flex-col gap-10 mb-10" ref={containerSectionRef}>
+        <motion.h1
+          className="text-5xl tracking-wide text-slate-100 text-center"
+          animate={mainControls}
+          initial="hidden"
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 75,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+            },
+          }}
+          transition={{
+            delay: 0.3,
+          }}
+        >
+          Just Keep Scrolling
+        </motion.h1>
+        <motion.p
+          style={{ translateX: paragraphOneValue }}
+          className="text-slate-100 font-thin text-4xl w-1/2 mx-auto"
+        >
+          This is a basic tutorial on how to get up and running with Framer
+          Motion with some TailwindCSS. If you enjoyed this video, please leave
+          a like and also subscribe.
+        </motion.p>
+        <motion.p
+          style={{ translateX: paragraphTwoValue }}
+          className="text-slate-100 font-thin text-4xl w-1/2 mx-auto"
+        >
+          Have fun playing with Framer Motion. It is a very powerful library,
+          when used properly. Add some life to your websites.
+        </motion.p>
+      </section>
     </div>
   );
 };

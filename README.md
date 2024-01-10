@@ -17,10 +17,17 @@ To install Framer Motion, run the following command:
 npm install framer-motion
 ```
 
-## Components
+## Introduction
 
 1. Basics of Animation (Animate Presence)
 2. Gestures
 3. Animation Controls use hooks
 4. View based animations
 5. Scroll based animations
+
+## Basics
+1. Stagger Children
+2. etc
+
+
+
