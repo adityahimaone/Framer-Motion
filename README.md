@@ -26,8 +26,8 @@ npm install framer-motion
 5. Scroll based animations
 
 ## Basics
+
 1. Stagger Children
 2. etc
 
-
-
+## Parallax
