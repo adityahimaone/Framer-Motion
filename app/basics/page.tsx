@@ -95,7 +95,7 @@ const Page = (props: Props) => {
     }
   }, [isInView]);
   return (
-    <div className="flex flex-col gap-10 overflow-x-hidden">
+    <div className="flex flex-col gap-10 overflow-x-hidden bg-slate-900">
       <motion.section
         variants={gridContainerVariants}
         initial="hidden"
