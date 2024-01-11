@@ -17,6 +17,10 @@ const links = [
     title: "Parallax",
     href: "/parallax",
   },
+  {
+    title: "Transition",
+    href: "/transition",
+  },
 ];
 
 export default function Home() {
@@ -43,9 +47,9 @@ export default function Home() {
             Table of content
           </motion.h1>
           <motion.div
-            initial={{ opacity: 0, y: 20, scaleX: 0 }}
+            initial={{ opacity: 0, y: 20, scaleX: 0, originX: 0 }}
             animate={{ opacity: 1, y: 0, scaleX: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 5 }}
             className="border-b border-slate-600 mt-2"
           ></motion.div>
           <motion.div
@@ -63,7 +67,10 @@ export default function Home() {
                   animate: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 0.8 }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{
+                  scale: 1.05,
+                  shadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+                }}
               >
                 <Link
                   href={link.href}
