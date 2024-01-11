@@ -13,6 +13,10 @@ const links = [
     title: "Basics",
     href: "/basics",
   },
+  {
+    title: "Parallax",
+    href: "/parallax",
+  },
 ];
 
 export default function Home() {
