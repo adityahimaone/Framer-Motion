@@ -35,3 +35,4 @@ npm install framer-motion
 ## Page Transition (Next JS 14 App Router)
 
 1. Inner
+2. Stairs

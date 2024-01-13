@@ -20,7 +20,7 @@ const WrapperMaxWidth = ({
   hide?: boolean;
 }) => (
   <div
-    className={cn("min-h-screen", {
+    className={cn("bg-white", {
       hidden: hide,
     })}
   >
@@ -38,8 +38,8 @@ export default function RootLayout({
       <body className={`${inter.className} bg-white`} suppressHydrationWarning>
         {/* if using inner transition hide thi */}
         <div className="main">
-          <WrapperMaxWidth hide>
-            <header className="space-x-3">
+          <WrapperMaxWidth>
+            <header className="space-x-3 px-[40px] py-3">
               <Link className="border-b border-slate-100" href="/transition">
                 Home
               </Link>

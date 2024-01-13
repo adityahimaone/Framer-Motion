@@ -1,9 +1,12 @@
+"use client";
+
+import Stairs from "@/components/Layouts/Stairs";
 import Inner from "@/components/Layouts/inner";
 import React from "react";
 
 const Page = () => {
   return (
-    <Inner>
+    <Stairs>
       <h1>Contact</h1>
       <div className="body">
         <p>
@@ -24,7 +27,7 @@ const Page = () => {
           ornare ex a nibh egestas, id euismod mi euismod.
         </p>
       </div>
-    </Inner>
+    </Stairs>
   );
 };
 
