@@ -1,12 +1,13 @@
 "use client";
 
 import Stairs from "@/components/Layouts/Stairs";
+import Curve from "@/components/Layouts/curve";
 import Inner from "@/components/Layouts/inner";
 import React from "react";
 
 const Page = () => {
   return (
-    <Stairs>
+    <Curve>
       <h1>Contact</h1>
       <div className="body">
         <p>
@@ -27,7 +28,7 @@ const Page = () => {
           ornare ex a nibh egestas, id euismod mi euismod.
         </p>
       </div>
-    </Stairs>
+    </Curve>
   );
 };
 

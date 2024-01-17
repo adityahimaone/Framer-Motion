@@ -4,12 +4,13 @@ import Inner from "@/components/Layouts/inner";
 import React from "react";
 import { motion } from "framer-motion";
 import Stairs from "@/components/Layouts/Stairs";
+import Curve from "@/components/Layouts/curve";
 
 type Props = {};
 
 const Page = (props: Props) => {
   return (
-    <Stairs>
+    <Curve>
       <h1>Home</h1>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -40,7 +41,7 @@ const Page = (props: Props) => {
           amet, convallis et turpis.
         </p>
       </motion.div>
-    </Stairs>
+    </Curve>
   );
 };
 

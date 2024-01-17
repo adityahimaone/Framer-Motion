@@ -1,5 +1,6 @@
 "use client";
 
+import Curve from "@/components/Layouts/curve";
 import Inner from "@/components/Layouts/inner";
 import Stairs from "@/components/Layouts/Stairs";
 import React from "react";
@@ -8,7 +9,7 @@ type Props = {};
 
 const Page = (props: Props) => {
   return (
-    <Stairs>
+    <Curve>
       <h1>About</h1>
       <div className="body">
         <p>
@@ -26,7 +27,7 @@ const Page = (props: Props) => {
           venenatis.
         </p>
       </div>
-    </Stairs>
+    </Curve>
   );
 };
 
